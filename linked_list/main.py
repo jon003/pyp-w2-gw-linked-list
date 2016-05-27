@@ -158,8 +158,12 @@ class LinkedList(AbstractLinkedList):
             current = current.next
         return count
 
+
     def pop(self, index=None): # corey:IN PROGRESS
         curr_node = self.start
+        if index == None:
+            index = len(self) - 1
+            
         if len(self) in (0, None) or index >= len(self):
             raise IndexError
         elif index==None or index==len(self):
@@ -190,7 +194,7 @@ class LinkedList(AbstractLinkedList):
             curr_node = ''
             prev_node.next = next_node
             return our_node
-        
+
 
 # MISC Test Sequences below, ignore.
 
